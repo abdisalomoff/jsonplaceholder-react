@@ -1,0 +1,128 @@
+* {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    padding: 0;
+}
+
+/* 
+.alert {
+    width: 100%;
+    max-width: 400px;
+} */
+
+.users-list {
+    position: relative;
+}
+
+
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* LOADER */
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid black;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* LOADER END */
+
+
+/* For better visibility of the example */
+  /* Message box starts here */
+
+  .comments {
+    clear: both;
+    position: relative;
+    width: 100%;
+  }
+  
+  .comments .arrow {
+    width: 12px;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+    top: 6px;
+    right: -1px;
+  }
+  
+  .comments .arrow .outer {
+    width: 0;
+    height: 0;
+    border-right: 20px solid #393333;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .comments .arrow .inner {
+    width: 0;
+    height: 0;
+    border-right: 20px solid #fcfaf5;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    top: 0;
+    left: 2px;
+  }
+  
+  .comments .message-body {
+    float: left;
+    width: calc(100% - 32px); /* Adjusted width for better visibility */
+    height: auto;
+    border: 1px solid #CCC;
+    background-color: #fcfaf5;
+    border: 1px solid #393333;
+    padding: 15px 18px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .comments .message-body p {
+    margin: 0;
+  }
+  
+  
+  
+  
+  
+
+/* MEDIA  */
+@media only screen and (max-width: 768px) {
+    ul {
+        li {
+            flex: 1 0 100px;
+        }
+    }
+}
