@@ -4,7 +4,8 @@ import {Link} from 'react-router-dom'
 
 const HomeUsersPage = () => {
     const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [search, setSearch] = useState('');
 
 useEffect(() => {
   const getUsers = () => {
@@ -33,6 +34,14 @@ useEffect(() => {
   getUsers();
 }, []);
 
+const handleSearch = (evt) => setSearch(evt.target.value)
+
+  const filteredUsers = users.filter(user=>{
+      return user.name.toLowerCase().includes(search.toLowerCase())
+  });
+
+
+
 
 if (loading) {
     return <div className="loading">
@@ -40,7 +49,7 @@ if (loading) {
     </div>
 }
 
-    const mappingUsers = users.map((user)=>(
+    const mappingUsers = filteredUsers.map((user)=>(
         <li className="alert alert-primary d-block" key={user.id} style={{ flex: "1 0 400px" }}>
             <Link className="text-decoration-none"  to={`/user/${user.id}/posts`}><h3 className="text-black">{user.name}</h3></Link>
             <p>Email: <a href={`mailto:${user.email}`}>{user.email}</a></p>
@@ -55,7 +64,8 @@ if (loading) {
   return (
     <div className="container">
         <h1 className="text-center my-3">Users</h1>
-        <ul className="users-list d-flex column-gap-3 flex-wrap text-content-start mt-3">
+        <input onChange={handleSearch} value={search} className="input form-control py-2 px-4" type="text" placeholder="Search a user..."/>
+        <ul className="users-list d-flex column-gap-3 flex-wrap mt-4">
         {mappingUsers}
         </ul>
     </div>
