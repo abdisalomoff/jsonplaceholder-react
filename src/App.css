@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
-ul{
-    padding: 0;
+ul {
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  background-color: #fff;
+  z-index: 999;
+  top: -10px;
+  box-shadow: 0 -6px 10px 5px rgba(0, 0, 0, 0.5);
 }
 
 /* 
@@ -14,115 +25,140 @@ ul{
     max-width: 400px;
 } */
 
+/* LOADER */
 .users-list {
-    position: relative;
+  position: relative;
 }
-
-
 
 .loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-
-/* LOADER */
-
 .loader {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: inline-block;
-    border-top: 3px solid black;
-    border-right: 3px solid transparent;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid black;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
 }
 
 @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* LOADER END */
 
 
+
 /* For better visibility of the example */
-  /* Message box starts here */
+/* Message box starts here */
 
-  .comments {
-    clear: both;
-    position: relative;
-    width: 100%;
-  }
-  
-  .comments .arrow {
-    width: 12px;
-    height: 20px;
-    overflow: hidden;
-    position: relative;
-    float: left;
-    top: 6px;
-    right: -1px;
-  }
-  
-  .comments .arrow .outer {
-    width: 0;
-    height: 0;
-    border-right: 20px solid #393333;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  .comments .arrow .inner {
-    width: 0;
-    height: 0;
-    border-right: 20px solid #fcfaf5;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    position: absolute;
-    top: 0;
-    left: 2px;
-  }
-  
-  .comments .message-body {
-    float: left;
-    width: calc(100% - 32px); /* Adjusted width for better visibility */
-    height: auto;
-    border: 1px solid #CCC;
-    background-color: #fcfaf5;
-    border: 1px solid #393333;
-    padding: 15px 18px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -o-border-radius: 5px;
-    border-radius: 5px;
-  }
-  
-  .comments .message-body p {
-    margin: 0;
-  }
-  
-  
-  
-  
-  
+.comments {
+  clear: both;
+  position: relative;
+  width: 100%;
+}
 
+.comments .arrow {
+  width: 12px;
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  top: 6px;
+  right: -1px;
+}
+
+.comments .arrow .outer {
+  width: 0;
+  height: 0;
+  border-right: 20px solid #d9d6ce;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.comments .arrow .inner {
+  width: 0;
+  height: 0;
+  border-right: 20px solid #fcfaf5;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
+
+.comments .message-body {
+  float: left;
+  width: calc(100% - 32px);
+  height: auto;
+  border: 1px solid #CCC;
+  background-color: #fcfaf5;
+  border: 1px solid #d9d6ce;
+  padding: 15px 18px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.comments .message-body p {
+  margin: 0;
+}
 /* MEDIA  */
 @media only screen and (max-width: 768px) {
-    ul {
-        li {
-            flex: 1 0 100px;
-        }
+  ul {
+    li {
+      flex: 1 0 100px;
     }
+  }
+}
+
+
+
+/* TODOS */
+
+@media only screen and (max-width: 523px) {
+  .contact-list {
+    flex-direction: column;
+  }
+
+  .contact-list-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .buttons {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 249px) {
+  .buttons button {
+    margin: 0px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
 }
